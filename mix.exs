@@ -5,7 +5,7 @@ defmodule Linters.Mixfile do
     [
       app: :linters,
       version: "0.1.0",
-      elixir: "~> 1.3",
+      elixir: "~> 1.4.4",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
@@ -26,6 +26,6 @@ defmodule Linters.Mixfile do
   end
 
   defp deps do
-    [{:credo, "~> 0.5"}]
+    [{:credo, "~> 0.8"}]
   end
 end
