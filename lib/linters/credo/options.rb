@@ -5,7 +5,8 @@ module Linters
   module Credo
     class Options < Linters::Base::Options
       def command(filename)
-        mix("credo #{filename} --strict --all --format=flycheck")
+        "#{strip_import_config(filename)} && " \
+          "#{mix("credo #{filename} --strict --all --format=flycheck")}"
       end
 
       def config_filename
@@ -21,6 +22,10 @@ module Linters
       end
 
       private
+
+      def strip_import_config(filename)
+        "sed -i.bak '/import_config/d' #{filename}"
+      end
 
       def mix(command)
         "MIX_EXS=#{mix_exs_path} mix #{command}"

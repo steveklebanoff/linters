@@ -52,6 +52,27 @@ RSpec.describe CredoReviewJob do
     end
   end
 
+  context "when another file is imported" do
+    it "does not error" do
+      content = <<~EOS
+        # TODO: Fix
+        import_config "config/missing.exs"
+      EOS
+
+      expect_violations_in_file(
+        config: "",
+        content: content,
+        filename: "config/foo.exs",
+        violations: [
+          {
+            line: 1,
+            message: "Found a TODO tag in a comment: # TODO: Fix",
+          },
+        ],
+      )
+    end
+  end
+
   def content
     <<~EOS
       if !true do
