@@ -16,6 +16,7 @@ dependencies:
     - if ! asdf | grep version; then git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.2.1; fi
     - asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git || true
     - asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git || true
+    - asdf plugin-add python https://github.com/tuvistavie/asdf-python.git || true
     - asdf install
     - cp .tool-versions ~/.tool-versions
     - bin/setup
