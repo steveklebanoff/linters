@@ -1,6 +1,6 @@
-require "jobs/flake8_review_job"
+require "jobs/linters_job"
 
-RSpec.describe Flake8ReviewJob do
+RSpec.describe LintersJob, "for flake8" do
   include LintersHelper
 
   context "when file contains violations" do
@@ -9,6 +9,7 @@ RSpec.describe Flake8ReviewJob do
         config: "",
         content: content,
         filename: "foo/bar.py",
+        linter_name: "flake8",
         violations: [
           {
             line: 1,
@@ -37,6 +38,7 @@ RSpec.describe Flake8ReviewJob do
         config: config,
         content: content,
         filename: "foo/bar.py",
+        linter_name: "flake8",
         violations: [
           {
             line: 1,
