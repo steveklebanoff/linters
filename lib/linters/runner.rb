@@ -54,10 +54,7 @@ module Linters
 
     def config_file
       if config_content
-        SourceFile.new(
-          linter_options.config_filename,
-          config_content,
-        )
+        SourceFile.new(linter_options.config_filename, config_content)
       else
         NoopFile.new
       end
@@ -81,7 +78,8 @@ module Linters
     end
 
     def config_content
-      linter_options.config_content(attributes.fetch("config"))
+      @_config_congtent ||= linter_options.
+        config_content(attributes.fetch("config"))
     end
   end
 end
