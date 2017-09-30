@@ -15,6 +15,7 @@ require "linters/sass_lint/options"
 require "linters/scss_lint/options"
 require "linters/slim_lint/options"
 require "linters/stylelint/options"
+require "linters/swiftlint/options"
 require "linters/tslint/options"
 
 class LintersJob
