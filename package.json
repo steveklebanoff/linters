@@ -24,6 +24,7 @@
     "eslint-plugin-compat": "^2.0.1",
     "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-meteor": "^4.1.4",
     "eslint-plugin-mocha": "^4.11.0",
